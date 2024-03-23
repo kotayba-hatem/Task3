@@ -1,0 +1,452 @@
+/* start global rules */
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+}
+
+ul {
+  list-style: none;
+}
+
+:root {
+  --main-color: #2c3e50;
+  --second-color: #1abc9c;
+}
+
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+/* small */
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+
+/* medium */
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+
+/* large */
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+
+/* end global rules */
+/* Start header */
+header nav {
+  height: 60px;
+  background-color: var(--main-color);
+}
+header nav .container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+header nav .container .name {
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 25;
+  padding: 15px;
+}
+header nav .container .links ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+header nav .container .links ul li {
+  padding: 20px;
+}
+header nav .container .links ul li a {
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: bold;
+  transition: 0.3s;
+}
+header nav .container .links ul li a:hover {
+  color: var(--second-color);
+  font-size: 15;
+}
+@media (max-width: 768px) {
+  header nav {
+    height: max-content;
+  }
+  header nav .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+}
+/* end nav */
+/* start hero */
+header .hero {
+  width: 100%;
+  height: calc(100vh - 60px);
+  background-color: var(--second-color);
+}
+header .hero .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+header .hero .container .img img {
+  width: 200px;
+  margin-top: 40%;
+  border-radius: 50%;
+  box-shadow: 0 0 20px 0px #000000c9;
+}
+header .hero .container .box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+}
+header .hero .container .box h1 {
+  text-align: center;
+  color: white;
+  text-transform: uppercase;
+  margin: 20px;
+  font-size: 40;
+}
+header .hero .container .box i {
+  margin: 20px;
+  color: white;
+}
+header .hero .container .box::before {
+  content: "";
+  width: 30%;
+  border: 2px solid white;
+  border-radius: 1px;
+  position: absolute;
+  left: 15%;
+  bottom: 40%;
+}
+header .hero .container .box::after {
+  content: "";
+  width: 30%;
+  border: 2px solid white;
+  border-radius: 1px;
+  position: absolute;
+  right: 15%;
+  bottom: 40%;
+}
+
+header .hero .container .box p {
+  color: white;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 18;
+  padding: 5%;
+}
+
+@media (max-width: 768px) {
+  header .hero {
+    height: 500px;
+  }
+}
+/* end header */
+/* start portfolio */
+.portfolio .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.special-heading h2 {
+  text-align: center;
+  color: var(--main-color);
+  text-transform: uppercase;
+  margin: 30px 20px 10px;
+  font-size: 40;
+}
+.special-heading i {
+  margin: 20px;
+  color: var(--main-color);
+}
+.special-heading::before {
+  content: "";
+  width: 10%;
+  border: 2px solid var(--main-color);
+  border-radius: 1px;
+  position: absolute;
+  left: 38%;
+  bottom: 15%;
+}
+.special-heading::after {
+  content: "";
+  width: 10%;
+  border: 2px solid var(--main-color);
+  border-radius: 1px;
+  position: absolute;
+  right: 38%;
+  bottom: 15%;
+}
+.special-heading {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  margin-top: 50px;
+}
+.portfolio .container .imgs {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.portfolio .container .imgs img {
+  width: 30%;
+  border-radius: 5px;
+  margin-top: 10px;
+  transition: 0.2s;
+}
+.portfolio .container .imgs img:hover {
+  opacity: 90%;
+  width: 29.8%;
+  cursor: pointer;
+}
+@media (max-width: 768px) {
+  .portfolio .container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+  .portfolio .container .imgs img {
+    width: 80%;
+  }
+  .portfolio .container .imgs img:hover {
+    width: 80%;
+    border-radius: 5px;
+    margin-top: 10px;
+  }
+  .special-heading i,
+  .special-heading::after,
+  .special-heading::before {
+    display: none;
+  }
+}
+/* end portfolio */
+/* Start about */
+.about {
+  background-color: var(--second-color);
+}
+.about .container {
+  height: 500px;
+}
+.about .container .white h2,
+.about .container .white i {
+  color: white;
+}
+.about .container .white::before,
+.about .container .white::after {
+  content: "";
+  border-color: white;
+}
+.about .container .contant {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+.about .container .contant p {
+  padding: 20px;
+  line-height: 1.8;
+  color: white;
+}
+.download-button {
+  display: block;
+  margin: 20px auto;
+  padding: 15px 30px;
+  font-size: 16px;
+  background-color: transparent;
+  color: white;
+  border: 2px solid white;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.download-button:hover {
+  background-color: var(--main-color);
+}
+.button i {
+  color: white;
+}
+@media (max-width: 768px) {
+  .about .container {
+    height: max-content;
+  }
+  .about .container .contant {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+}
+/* ent about */
+/* Start contact me */
+.contact-me {
+  background-color: white;
+}
+.contact-me .container {
+  height: 750px;
+}
+.contact-me .container form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 30px;
+  margin-top: 20px;
+}
+.contact-me .container form input {
+  width: 50%;
+  padding: 20px;
+  border: none;
+  border-bottom: 2px solid #eee;
+  font-size: 20px;
+}
+.contact-me .container form .resizable {
+  resize: both;
+  overflow: auto;
+  width: 50%;
+}
+.contact-me .container form .resizable input {
+  width: 100%;
+  padding-bottom: 50px;
+}
+.contact-me .container form button {
+  display: block;
+  margin-right: 43%;
+  padding: 15px 20px;
+  border: none;
+  color: white;
+  background-color: var(--second-color);
+  border-radius: 5px;
+  transition: 0.2s;
+  font-size: 17px;
+}
+.contact-me .container form button:hover {
+  background-color: var(--main-color);
+  cursor: pointer;
+}
+/* end contact-me */
+/* start info */
+.info {
+  background-color: var(--main-color);
+}
+.info .container {
+  height: 300px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.info .container .box1,
+.info .container .box2,
+.info .container .box3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 30%;
+}
+.info .container .box1 h3,
+.info .container .box3 h3 {
+  text-transform: uppercase;
+  color: white;
+  font-weight: bold;
+  margin-bottom: 20px;
+  font-size: 25px;
+}
+.info .container .box2 h3 {
+  text-transform: uppercase;
+  color: white;
+  font-weight: bold;
+  margin-bottom: 40px;
+  font-size: 25px;
+}
+.info .container .box1 p,
+.info .container .box3 p {
+  color: white;
+  padding: 5px;
+  font-size: 16px;
+}
+.info .container .box2 .icons i {
+  padding: 10px;
+  color: white;
+  border: 2px solid white;
+  border-radius: 50%;
+  margin-left: 5px;
+  transition: 0.1s;
+}
+.info .container .box2 .icons i:hover {
+  color: var(--second-color);
+  border-color: var(--second-color);
+}
+.info .container .box3 p a {
+  color: var(--second-color);
+}
+@media (max-width: 768px) {
+  .info .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    height: max-content;
+  }
+  .info .container .box1,
+  .info .container .box2,
+  .info .container .box3 {
+    width: 100%;
+    margin: 25px;
+  }
+}
+/* end info */
+/* start foot */
+.foot {
+  background-color: #1a252f;
+}
+.foot .container {
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.foot .container p {
+  color: white;
+  font-size: 16px;
+  font-weight: lighter;
+}
